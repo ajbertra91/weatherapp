@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Weather App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheets/main.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../node_modules/riot/riot+compiler.js"></script>
+</head>
+<body>
+
+  <!-- mount point -->
+  <app-tag></app-tag>
+
+  <!-- inlined tag definition -->
+  <script type="riot/tag" src="./components/app.tag"></script>
+  <script type="riot/tag" src="./components/slider.tag"></script>
+  <script type="riot/tag" src="./components/weather.tag"></script>
+  <script type="riot/tag" src="./components/forecast.tag"></script>
+
+  <!-- mount normally -->
+  <script>
+    riot.mount('app-tag')
+  </script>
+
+</body>
+</html>

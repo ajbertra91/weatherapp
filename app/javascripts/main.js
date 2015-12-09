@@ -1,0 +1,1 @@
+riot.mount('app-tag', {greeting: 'hola', punctuation: '?'});

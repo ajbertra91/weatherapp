@@ -1,0 +1,15 @@
+{
+  "name": "weatherapp",
+  "version": "0.1.0",
+  "description": "Weather App built in Riot.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Adam Bertrand",
+  "license": "ISC",
+  "dependencies": {
+    "riot": "^2.3.1"
+  }
+}
