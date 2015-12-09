@@ -1,7 +1,7 @@
 <slider-tag style="width:{ sliderTagWidth };">
   <div class="slide-wrapper" style="width:{ wrapperWidth };">
     <div class="slide" style="width:{ slideWidth }; float:left;" each="{ opts.locals }">
-      <weather-tag local="{ city }, { state ? state : country }" request="http://api.openweathermap.org/data/2.5/weather?q={ city }, { state ? state : country }&APPID=7093bd32bfc85a9e2e6b3318b1e70b61" />
+      <weather-tag local="{ city }, { state ? state : country }" request="{ city }, { state ? state : country }" />
     </div>
   </div>
   <div class="dot-container">
@@ -16,6 +16,9 @@
     }
     .slide-wrapper {
       /* width must be set dynamically */
+      white-space: nowrap;
+      scroll-snap-points-x: repeat(100%);
+      scroll-snap-type: mandatory;
     }
     .slide {}
     .dot-container {
@@ -40,6 +43,7 @@
     this.sliderTagWidth = w + 'px'
     this.wrapperWidth = (opts.locals.length * w) + 'px'
     this.slideWidth = w + 'px'
+
   </script>
 
 </slider-tag>

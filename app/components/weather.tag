@@ -1,9 +1,9 @@
 <weather-tag>
   <div class="card { main } { isEditing ? 'is-editing' : '' }">
     <div class="location-container">
-      <h1 class="location location-text">{ opts.local || 'Today' } <i class="glyphicon glyphicon-pencil edit-icon" onclick="{ toggleEdit }"></i></h1>
+      <h1 class="location location-text">{ newLocal || 'Today' } <i class="glyphicon glyphicon-pencil edit-icon" onclick="{ toggleEdit }"></i></h1>
       <h1 class="location location-input">
-        <input class="city-input" type="text" value="{ newLocal }">
+        <input class="city-input" type="text" value="{ newLocal }" onchange="{ handleInput }">
         <i class="glyphicon glyphicon-download save-icon" onclick="{ toggleEdit }"></i>
       </h1>
     </div>
@@ -61,6 +61,7 @@
       width: 100%;
       font-size: 28px;
       padding: 10px;
+      border-radius: 3px;
     }
     .location-input {
       transition: transform 300ms cubic-bezier(.17,.67,.22,1.21),
@@ -80,6 +81,13 @@
     .is-editing .location-input{
       transform: translate3d(0, 0, 0);
       opacity: 1;
+    }
+    .is-editing input {
+      border: 1px solid hsla(305, 100%, 50%, 1);
+      box-shadow: 0 3px 3px rgba(0,0,0,0.2); 
+    }
+    .is-editing input:focus {
+      outline: none;
     }
     .city-input {
       color: hsla(0, 20%, 20%, 1);
@@ -149,20 +157,26 @@
     view.today = (month) + '-' + (day) + '-' + now.getFullYear();
     view.isEditing = false;
 
-    view.newLocal = 'Hi';
-
     view.toggleEdit = function toggleEdit() {
       view.isEditing = !view.isEditing;
     }
 
+    view.handleInput = function handleInput() {
+      getData(view.newLocal)
+      console.debug('view.newLocal', view.newLocal);
+    }
 
-    function getData() {
-      callAjax().done(model)
+
+    function getData(req) {
+      view.newLocal = req || opts.local;
+      reqEncoded = encodeURIComponent(req)
+      console.debug('reqEncoded: ', reqEncoded);
+      callAjax(reqEncoded).done(model)
     }
     // helpers
-    function callAjax() {
+    function callAjax(req) {
       return $.ajax({
-        url: opts.request // <-- comes from the parent tag
+        url: 'http://api.openweathermap.org/data/2.5/weather?q='+ req +'&APPID=7093bd32bfc85a9e2e6b3318b1e70b61'
         ,type: 'GET'
         ,dataType: 'json'
       })
@@ -206,7 +220,7 @@
     }
 
     
-    getData()
+    getData(opts.request)
     
   </script>
   
