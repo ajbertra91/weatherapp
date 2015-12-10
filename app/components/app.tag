@@ -41,8 +41,8 @@
         ,country: 'UK'
       }
       ,{
-        city: 'Las Vegas'
-        ,state: 'NV'
+        city: 'Salt Lake City'
+        ,state: 'UT'
         ,country: 'US'
       }
       ,{

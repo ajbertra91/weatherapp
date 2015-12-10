@@ -35,7 +35,7 @@
     .rgba-secondary-2-2 { color: rgba(112,179,230,1) }
     .rgba-secondary-2-3 { color: rgba( 84,122,151,1) }
     .rgba-secondary-2-4 { color: rgba( 58, 76, 89,1) }
-    
+
     :scope .weather-card {
       background: radial-gradient(rgba( 77,152,184,1) 0%, rgba( 43,129,166,1) 100%);
       padding: 30px;
@@ -78,6 +78,13 @@
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
+    .location-text {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 110%;
+      white-space: nowrap;
+      padding-right: 35px;
+    }
     .location input {
       width: 100%;
       font-size: 28px;
@@ -118,6 +125,9 @@
       font-size: 30px;
       float: right;
       line-height: 42px;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
     .save-icon {
       color: rgba(0,0,0,0.3);
