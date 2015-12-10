@@ -18,14 +18,32 @@
   </div>
 
   <style scoped>
+    .rgba-primary-0 { color: rgba(  7,114,161,1) }  /* Main Primary color */
+    .rgba-primary-1 { color: rgba( 77,152,184,1) }
+    .rgba-primary-2 { color: rgba( 43,129,166,1) }
+    .rgba-primary-3 { color: rgba(  5, 88,124,1) }
+    .rgba-primary-4 { color: rgba(  3, 69, 98,1) }
+
+    .rgba-secondary-1-0 { color: rgba( 44,139,147,1) }  /* Main Secondary color (1) */
+    .rgba-secondary-1-1 { color: rgba(132,210,217,1) }
+    .rgba-secondary-1-2 { color: rgba( 78,170,178,1) }
+    .rgba-secondary-1-3 { color: rgba( 19,117,126,1) }
+    .rgba-secondary-1-4 { color: rgba(  7, 81, 88,1) }
+
+    .rgba-secondary-2-0 { color: rgba( 93,149,192,1) }  /* Main Secondary color (2) */
+    .rgba-secondary-2-1 { color: rgba(137,202,251,1) }
+    .rgba-secondary-2-2 { color: rgba(112,179,230,1) }
+    .rgba-secondary-2-3 { color: rgba( 84,122,151,1) }
+    .rgba-secondary-2-4 { color: rgba( 58, 76, 89,1) }
+    
     :scope .weather-card {
-      background: radial-gradient(hsla(199, 13%, 28%, 1) 0%, hsla(199, 13%, 28%, 1) 100%);
+      background: radial-gradient(rgba( 77,152,184,1) 0%, rgba( 43,129,166,1) 100%);
       padding: 30px;
       text-align: center;
       font-weight: 100;
       color: hsla(360, 100%, 100%, 1);
     }
-    .weather-card.Clear {
+    /*.weather-card.Clear {
       background: radial-gradient(hsla(186, 100%, 70%, 1) 0%, hsla(200, 100%, 50%, 1) 100%);
     }
     .weather-card.Clouds {
@@ -36,7 +54,7 @@
     }
     .weather-card.Mist {
       background: radial-gradient(hsla(198, 46%, 69%, 1) 0%, hsla(198, 46%, 52%, 1) 100%);
-    }
+    }*/
     .location-container {
       position: relative;
       height: 76px;
@@ -96,7 +114,7 @@
       color: hsla(0, 20%, 20%, 1);
     }
     .edit-icon {
-      color: rgba(0,0,0,0.3);
+      color: rgba(137,202,251,1);
       font-size: 30px;
       float: right;
       line-height: 42px;

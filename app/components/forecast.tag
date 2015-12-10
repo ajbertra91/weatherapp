@@ -11,12 +11,12 @@
   
   <style scoped>
     :scope .card {
-      background-color: hsla(360, 50%, 50%, 0.5);
+      background-color: rgba(  7,114,161,1);
       margin-top: 30px;
       padding: 30px;
       text-align: center;
       font-weight: 100;
-      color: hsla(360, 100%, 100%, 1);
+      color: rgba(137,202,251,1);
     }
     .ftemp--container,
     .fday--container {
