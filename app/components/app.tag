@@ -6,7 +6,7 @@
 
   <style scoped>
     :scope {
-      background: url('../app/images/small_steps.png') repeat 0 0;
+      background: url('./app/images/small_steps.png') repeat 0 0;
       position: absolute;
       top: 0;
       bottom: 0;
