@@ -1,6 +1,6 @@
 <forecast-tag>
   <div class="card forecast">
-    { opts.local }
+    <h4>Forecast</h4>
     <div class="fday--container">
       <span class="fday" each="{ fdays }">{ day }</span>
     </div>
@@ -10,9 +10,13 @@
   </div>
   
   <style scoped>
-    .card {
+    :scope .card {
       background-color: hsla(360, 50%, 50%, 0.5);
       margin-top: 30px;
+      padding: 30px;
+      text-align: center;
+      font-weight: 100;
+      color: hsla(360, 100%, 100%, 1);
     }
     .ftemp--container,
     .fday--container {

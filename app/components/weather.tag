@@ -1,5 +1,5 @@
 <weather-tag>
-  <div class="card { main } { isEditing ? 'is-editing' : '' }">
+  <div class="card weather-card { main } { isEditing ? 'is-editing' : '' }">
     <div class="location-container">
       <h1 class="location location-text">{ newLocal || 'Today' } <i class="glyphicon glyphicon-pencil edit-icon" onclick="{ toggleEdit }"></i></h1>
       <h1 class="location location-input">
@@ -17,22 +17,25 @@
 
   </div>
 
-  <style>
-    .card {
-      background-color: #8497F9;
+  <style scoped>
+    :scope .weather-card {
+      background: radial-gradient(hsla(199, 13%, 28%, 1) 0%, hsla(199, 13%, 28%, 1) 100%);
       padding: 30px;
       text-align: center;
       font-weight: 100;
       color: hsla(360, 100%, 100%, 1);
     }
-    .card.Clear {
-      background: radial-gradient(hsla(171, 100%, 80%, 1) 0%, hsla(200, 100%, 50%, 1) 100%);
+    .weather-card.Clear {
+      background: radial-gradient(hsla(186, 100%, 70%, 1) 0%, hsla(200, 100%, 50%, 1) 100%);
     }
-    .card.Clouds {
+    .weather-card.Clouds {
       background: radial-gradient(hsla(179, 21%, 84%, 1) 0%, hsla(179, 0%, 64%, 1) 100%);
     }
-    .card.Rain {
+    .weather-card.Rain {
       background: radial-gradient(hsla(179, 21%, 84%, 1) 0%, hsla(220, 15%, 45%, 1) 100%);
+    }
+    .weather-card.Mist {
+      background: radial-gradient(hsla(198, 46%, 69%, 1) 0%, hsla(198, 46%, 52%, 1) 100%);
     }
     .location-container {
       position: relative;
