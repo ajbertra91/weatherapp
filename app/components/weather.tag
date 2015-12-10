@@ -19,7 +19,7 @@
 
   <style>
     .card {
-      background-color: #ddd;
+      background-color: #8497F9;
       padding: 30px;
       text-align: center;
       font-weight: 100;
@@ -214,7 +214,7 @@
       else if (deg >= 330 && deg < 360) view.windDir = 'N'
       
       // update the view
-      //view.update(console.debug('update called')) // MUST run the update to get the view ("this") to render
+      view.update() // MUST run the update to get the view ("this") to render
     }
 
     // view.update(getData(opts.request)
