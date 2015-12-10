@@ -46,13 +46,16 @@
     var month = ('0' + (now.getMonth() + 1)).slice(-2);
     view.today = (month) + '-' + (day) + '-' + now.getFullYear();
     
-    function getData() {
-      callAjax().done(model)
+    function getData(req) {
+      // callAjax().done(model)
+      reqEncoded = encodeURIComponent(req)
+      callAjax(reqEncoded).done(model)
+      console.debug('http://api.openweathermap.org/data/2.5/forecast?q='+ req +'&APPID=7093bd32bfc85a9e2e6b3318b1e70b61&units=imperial');
     }
 
-    function callAjax() {
+    function callAjax(req) {
       return $.ajax({
-        url: 'http://api.openweathermap.org/data/2.5/forecast?q={ opts.local }&APPID=7093bd32bfc85a9e2e6b3318b1e70b61&units=imperial'
+        url: 'http://api.openweathermap.org/data/2.5/forecast?q='+ req +'&APPID=7093bd32bfc85a9e2e6b3318b1e70b61&units=imperial'
         ,type: 'GET'
         ,dataType: 'json'
       })
@@ -88,6 +91,6 @@
     }
 
 
-    getData()
+    getData(opts.local)
   </script>
 </forecast-tag>
