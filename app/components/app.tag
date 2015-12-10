@@ -26,45 +26,74 @@
   </style>
   
   <script>
-    // setTimeout(function() {
-    //   console.log('do an animation')
-    // }, 500)
     this.locals = [
       {
-        city: 'Canton'
-        ,state: 'CT'
-        ,country: 'US'
-      }
-      ,{
-        city: 'London'
+        city: 'Local Weather'
         ,state: ''
-        ,country: 'UK'
+        ,country: ''
       }
-      ,{
-        city: 'Salt Lake City'
-        ,state: 'UT'
-        ,country: 'US'
-      }
-      ,{
-        city: 'Wichita'
-        ,state: 'KS'
-        ,country: 'US'
-      }
-      ,{
-        city: 'Concord'
-        ,state: 'NE'
-        ,country: 'US'
-      }
-      ,{
-        city: 'Sioux Falls'
-        ,state: 'SD'
-        ,country: 'US'
-      }
-      ,{
-        city: 'Havana'
-        ,state: ''
-        ,country: 'CUB'
-      }
-    ];
+    ]
+    if (navigator.geolocation) {
+        //great! 
+      console.debug('navigator.geolocation exists');
+      navigator.geolocation.getCurrentPosition(function(position){
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        console.debug('position: ', position);
+        console.debug('lat: ', lat);
+        console.debug('lon: ', lon);
+        this.locals = [
+          {lat:lat, lon: lon}
+        ]
+        riot.update(this)
+      },function(error){
+        //use error.code to determine what went wrong
+        error.throw('Something went wrong', error);
+      });
+    } else {
+      console.warn('no geolocation!!!')
+    }
+    // this.locals = [
+    //   {
+    //     city: ''
+    //     ,state: ''
+    //     ,country: ''
+    //   }
+      // {
+      //   city: 'Canton'
+      //   ,state: 'CT'
+      //   ,country: 'US'
+      // }
+      // ,{
+      //   city: 'London'
+      //   ,state: ''
+      //   ,country: 'UK'
+      // }
+      // ,{
+      //   city: 'Salt Lake City'
+      //   ,state: 'UT'
+      //   ,country: 'US'
+      // }
+      // ,{
+      //   city: 'Wichita'
+      //   ,state: 'KS'
+      //   ,country: 'US'
+      // }
+      // ,{
+      //   city: 'Concord'
+      //   ,state: 'NE'
+      //   ,country: 'US'
+      // }
+      // ,{
+      //   city: 'Sioux Falls'
+      //   ,state: 'SD'
+      //   ,country: 'US'
+      // }
+      // ,{
+      //   city: 'Havana'
+      //   ,state: ''
+      //   ,country: 'CUB'
+      // }
+    // ];
   </script>
 </app-tag>

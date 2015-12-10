@@ -18,6 +18,7 @@
   </div>
 
   <style scoped>
+    /*http://paletton.com/#uid=53r071kw0w0jyC+oRxVy4oIDfjrkmKupcGOMilCurEq4tNiekhHEGf-ZJhuS1f8txbJhm*/
     .rgba-primary-0 { color: rgba(  7,114,161,1) }  /* Main Primary color */
     .rgba-primary-1 { color: rgba( 77,152,184,1) }
     .rgba-primary-2 { color: rgba( 43,129,166,1) }
@@ -249,7 +250,7 @@
     }
 
     // view.update(getData(opts.request)
-    getData(opts.request)
+    getData(opts.local)
     
   </script>
   

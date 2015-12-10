@@ -1,7 +1,7 @@
 <slider-tag style="width:{ sliderTagWidth };">
   <div class="slide-wrapper" style="width:{ wrapperWidth };">
     <div class="slide" style="width:{ slideWidth }; float:left;" each="{ opts.locals }">
-      <weather-tag local="{ city }, { state ? state : country }" request="{ city }, { state ? state : country }" />
+      <weather-tag local="{ city } { state ? state : country }" request="lat={ lat }&lon={ lon }" />
     </div>
   </div>
   <!-- <div class="dot-container">
@@ -40,10 +40,12 @@
   </style>
 
   <script>
+    console.debug('opts.locals: ', opts.locals);
     var w = window.innerWidth
     this.sliderTagWidth = w + 'px'
     this.wrapperWidth = (opts.locals.length * w) + 'px'
     this.slideWidth = w + 'px'
+
 
   </script>
 
