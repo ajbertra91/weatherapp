@@ -13,6 +13,7 @@
       overflow-x: scroll;
       position: absolute;
       box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+      -webkit-overflow-scrolling: touch;
     }
     .slide-wrapper {
       /* width must be set dynamically */
