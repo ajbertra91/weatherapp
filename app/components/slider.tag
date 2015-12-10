@@ -4,9 +4,9 @@
       <weather-tag local="{ city }, { state ? state : country }" request="{ city }, { state ? state : country }" />
     </div>
   </div>
-  <div class="dot-container">
+  <!-- <div class="dot-container">
     <div class="dot"></div>
-  </div>
+  </div> -->
 
   <style scoped>
     :scope {

@@ -1,1 +1,5 @@
-riot.mount('app-tag', {greeting: 'hola', punctuation: '?'});
+(function () {
+
+  riot.mount('app-tag');
+
+})()

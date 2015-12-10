@@ -2,7 +2,7 @@
   
   <slider-tag locals="{ locals }"></slider-tag>
 
-  <div class="btn btn-warning add-button">+</div>
+  <!-- <div class="btn btn-warning add-button">+</div> -->
 
   <style>
     .add-button {

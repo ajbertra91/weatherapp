@@ -3,7 +3,7 @@
     <div class="location-container">
       <h1 class="location location-text">{ newLocal || 'Today' } <i class="glyphicon glyphicon-pencil edit-icon" onclick="{ toggleEdit }"></i></h1>
       <h1 class="location location-input">
-        <input class="city-input" type="text" value="{ newLocal }" onchange="{ handleInput }">
+        <input name="cityInput" class="city-input" type="text" value="{ newLocal }" onchange="{ cityUpdate }">
         <i class="glyphicon glyphicon-download save-icon" onclick="{ toggleEdit }"></i>
       </h1>
     </div>
@@ -13,7 +13,7 @@
     <div class="condition">{ main }</div>
     <div class="wind">Wind: { windDir } { windSpeed }mph</div>
   
-    <forecast-tag local="{ opts.local }" />
+    <forecast-tag local="{ newLocal }" />
 
   </div>
 
@@ -161,16 +161,14 @@
       view.isEditing = !view.isEditing;
     }
 
-    view.handleInput = function handleInput() {
+    view.cityUpdate = function(e) {
+      view.newLocal = view.cityInput.value
       getData(view.newLocal)
-      console.debug('view.newLocal', view.newLocal);
     }
-
 
     function getData(req) {
       view.newLocal = req || opts.local;
       reqEncoded = encodeURIComponent(req)
-      console.debug('reqEncoded: ', reqEncoded);
       callAjax(reqEncoded).done(model)
     }
     // helpers
@@ -216,10 +214,10 @@
       else if (deg >= 330 && deg < 360) view.windDir = 'N'
       
       // update the view
-      riot.update(view) // MUST run the update to get the view ("this") to render
+      //view.update(console.debug('update called')) // MUST run the update to get the view ("this") to render
     }
 
-    
+    // view.update(getData(opts.request)
     getData(opts.request)
     
   </script>
