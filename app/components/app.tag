@@ -4,7 +4,15 @@
 
   <!-- <div class="btn btn-warning add-button">+</div> -->
 
-  <style>
+  <style scoped>
+    :scope {
+      background: url('../app/images/small_steps.png') repeat 0 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
     .add-button {
       position: absolute;
       bottom: 50px;
